@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+body {
+  background: linear-gradient(to right, rgb(52, 168, 214), rgb(91, 205, 53));
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  margin-top: 50px;
+  grid-template-columns: repeat(4, 90px);
+  grid-template-rows: minmax(120px, auto) repeat(4, 80px);
+  row-gap: 0px;
+  margin-bottom: 100px;
+  border-radius: 0px 0px 25px 25px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.calculator-grid .output {
+  width: inherit;
+  height: 300px;
+  background-color: rgb(92, 8, 248);
+  grid-column: 1/-1;
+  border-radius: 25px 25px 0px 0px;
+  border: none;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-end ;
+  padding-right: 40px;
+  padding-top: 40px;
+  word-wrap: break-word;
+  word-break: break-all;
+
+}
+
+.calculator-grid .output .previous-operand
+{
+  font-size: 1.5rem;
+  color:white;
+
+}
+.calculator-grid .output .current-operand
+{
+   
+  font-size: 2rem;
+  color:white;
+}
+
+
+.calculator-grid button {
+  cursor: pointer;
+  font-size: 1.7rem;
+  border: none;
   color: white;
+  background-color: black;
+
 }
 
-.App-link {
-  color: #61dafb;
+.calculator-grid::before
+{
+  content: '';
+  position: absolute;
+  bottom:-40px;
+  width:357px;
+  height: 40px;
+  background-color: black;
+  left:580px;
+  border: 2px solid black;
+  border-radius: 0px 0px 15px 15px;
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header {
+
+  grid-column: 1/-1;
+  height: 20px;
+  background-color: rgba(75, 23, 130, 0.355);
+  margin: 0px;
+
+}
+
+.calculator-grid button.operation {
+  color: rgb(119, 21, 223);
+  font-size: 2rem;
+}
+
+.btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: black;
+}
+
+.l
+{
+  border-radius: 0px 0px 25px 0px;
+}
+
+.r
+{
+  border-radius: 0px 0px 0px 25px;
 }
